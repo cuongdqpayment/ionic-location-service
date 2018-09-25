@@ -1,14 +1,57 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Location
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      <button ion-button round (click)="getLocation()">Vị trí hiện tại</button>
+    </ion-card-header>
+    <ion-card-content>
+      Latitude: {{locCur?.lat}}
+      <br/>
+      Longitude: {{locCur?.lon}}
+      <br/>
+      Accuracy: {{locCur?.accuracy}}
+      <br/>
+      Speed: {{locCur?.speed}}
+      <br/>
+      Timestamp: {{locCur?.timestamp}}
+      <br/>
+      Altitude: {{locCur?.altitude}}
+      <br/>
+      AltitudeAccuracy: {{locCur?.altitudeAccuracy}}
+      <br/>
+      Heading: {{locCur?.heading}}
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <button ion-button round (click)="trackingLocation()">Tracking vị trí</button>
+    </ion-card-header>
+    <ion-card-content>
+      Latitude: {{locMove?.lat}}
+      <br/>
+      Longitude: {{locMove?.lon}}
+      <br/>
+      Accuracy: {{locMove?.accuracy}}
+      <br/>
+      Speed: {{locMove?.speed}}
+      <br/>
+      Timestamp: {{locMove?.timestamp}}
+      <br/>
+      Altitude: {{locMove?.altitude}}
+      <br/>
+      AltitudeAccuracy: {{locMove?.altitudeAccuracy}}
+      <br/>
+      Heading: {{locMove?.heading}}
+      <br/>
+      Count: {{locMove?.count}}
+    </ion-card-content>
+  </ion-card>
+  <button ion-button color="danger" round (click)="stopTracking()">Stop Tracking</button>
 </ion-content>
